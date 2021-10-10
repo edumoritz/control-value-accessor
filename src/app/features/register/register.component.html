@@ -1,0 +1,39 @@
+<form [formGroup]="form" class="pt-5">
+  <div class="container-fluid">
+    <h2 class="text-center py-3">Register Form</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="John Doe" formControlName="name" />
+          </mat-form-field>
+
+          <autocomplete
+            formControlName="state"
+            [typeAutoComplete]="stateAutoComplete"
+            label="State"
+          ></autocomplete>
+
+          <autocomplete
+            formControlName="package"
+            [typeAutoComplete]="packageAutoComplete"
+            label="Package"
+          ></autocomplete>
+
+          <autocomplete
+            formControlName="payment"
+            [typeAutoComplete]="paymentAutoComplete"
+            label="Payment"
+          ></autocomplete>
+
+          <div class="col-12 pt-3 text-center">
+            <button mat-raised-button color="primary" (click)="submitRequest()">
+              Request
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
